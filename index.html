@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faramilk - Soft drinks by the crate</title>
+  <link rel="icon" href="images/favicon.svg">
+  <!-- The look of the page is in style.css -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== TOP BAR ===== -->
+  <header>
+    <div class="container bar">
+      <img src="images/logo.svg" alt="Faramilk" height="34">
+      <a href="#cart" class="cart-link">Cart (<span id="cartCount">0</span>)</a>
+    </div>
+  </header>
+
+  <!-- ===== BIG WELCOME SECTION ===== -->
+  <section class="hero">
+    <div class="container">
+      <h1>Soft drinks by the crate.<br>Never by the piece.</h1>
+      <p>Choose a crate of 12 or 24 bottles. We deliver it to your door.</p>
+      <a href="#shop" class="button white">Shop crates</a>
+    </div>
+  </section>
+
+  <!-- ===== THE DRINKS ===== -->
+  <section id="shop" class="container">
+    <h2>Pick your crate</h2>
+    <p>Each crate has one flavour. Choose 12 or 24 bottles, then press "Add to cart".</p>
+
+    <div class="products">
+
+      <!-- TO ADD A NEW DRINK: copy one whole "card" block and change the name, picture and prices -->
+
+      <!-- Drink 1 -->
+      <div class="card">
+        <!-- If your photo is missing, the drawing is shown instead (onerror) -->
+        <img src="images/photos/colas.jpg" onerror="this.src='images/bottle-colas.svg'" alt="Classic Cola">
+        <h3>Classic Cola</h3>
+        <select id="cola">
+          <option value="14">12 bottles ($14)</option>
+          <option value="26">24 bottles ($26)</option>
+        </select>
+        <button onclick="addToCart('Classic Cola', 'cola')">Add to cart</button>
+      </div>
+
+      <!-- Drink 2 -->
+      <div class="card">
+        <img src="images/photos/oranges.jpg" onerror="this.src='images/bottle-oranges.svg'" alt="Orange Fizz">
+        <h3>Orange Fizz</h3>
+        <select id="orange">
+          <option value="13">12 bottles ($13)</option>
+          <option value="24">24 bottles ($24)</option>
+        </select>
+        <button onclick="addToCart('Orange Fizz', 'orange')">Add to cart</button>
+      </div>
+
+      <!-- Drink 3 -->
+      <div class="card">
+        <img src="images/photos/lemon-limes.jpg" onerror="this.src='images/bottle-lemon-limes.svg'" alt="Lemon-Lime">
+        <h3>Lemon-Lime</h3>
+        <select id="lime">
+          <option value="13">12 bottles ($13)</option>
+          <option value="24">24 bottles ($24)</option>
+        </select>
+        <button onclick="addToCart('Lemon-Lime', 'lime')">Add to cart</button>
+      </div>
+
+      <!-- Drink 4 -->
+      <div class="card">
+        <img src="images/photos/cokess.jpg" onerror="this.src='images/bottle-cokess.svg'" alt="Coke">
+        <h3>Coke</h3>
+        <select id="coke">
+          <option value="14">12 bottles ($14)</option>
+          <option value="26">24 bottles ($26)</option>
+        </select>
+        <button onclick="addToCart('Coke', 'ginger')">Add to cart</button>
+      </div>
+
+      <!-- Drink 5 -->
+      <div class="card">
+        <img src="images/photos/orangess.jpg" onerror="this.src='images/bottle-orangess.svg'" alt="Orange Fizz">
+        <h3>Orange Fizz</h3>
+        <select id="orange">
+          <option value="13">12 bottles ($13)</option>
+          <option value="24">24 bottles ($24)</option>
+        </select>
+        <button onclick="addToCart('Orange Fizz', 'orange')">Add to cart</button>
+      </div>
+
+      <!-- Drink 6 -->
+      <div class="card">
+        <img src="images/photos/berry.jpg" onerror="this.src='images/bottle-berry.svg'" alt="Berry Blast">
+        <h3>Berry Blast</h3>
+        <select id="berry">
+          <option value="15">12 bottles ($15)</option>
+          <option value="28">24 bottles ($28)</option>
+        </select>
+        <button onclick="addToCart('Berry Blast', 'berry')">Add to cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== THE CART AND ORDER FORM ===== -->
+  <section id="cart" class="cart-section">
+    <div class="container">
+      <h2>Your cart</h2>
+
+      <!-- script.js fills these two boxes -->
+      <div id="cartItems"></div>
+      <div id="cartTotals"></div>
+
+      <h3>Where should we deliver?</h3>
+      <input id="name" placeholder="Your full name">
+      <input id="phone" placeholder="Phone number">
+      <input id="address" placeholder="Delivery address">
+      <p id="message"></p>
+      <button onclick="placeOrder()">Place order</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Faramilk. We sell soft drinks by the crate only.</p>
+    </div>
+  </footer>
+
+  <!-- All the actions (add to cart, totals, order) are in script.js -->
+  <script src="script.js"></script>
+</body>
+</html>
